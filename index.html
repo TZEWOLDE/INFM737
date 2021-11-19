@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Refresh" content="0; url='login_page.html'" />
-</head>
-<body>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Database</title>
+  </head>
+  <body>
+    <form action="controller.php" method="post">
+      <p>
+        Search creteria
+        <select name="creteria" id="creteria">
+          <option value="name">Dataset Name</option>
+          <option value="ownername">Dataset Owner Name</option>
+          <option value="stewardname">Dataset Steward Name</option>
+          <option value="kpiname">Dataset KPI Name</option>
+          <option value="strategicpriority">
+            Dataset Stategic Priority- eg(1)
+          </option>
+        </select>
+      </p>
+      <p>
+        <label for="lastName">Search:</label>
+        <input type="text" placeholder="Search" name="search" />
+      </p>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
 </html>
