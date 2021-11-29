@@ -18,13 +18,7 @@ mysqli_select_db ( $conn , 'WSSC_Data_Catalog' );
 
 $searchvalue = mysqli_real_escape_string($conn, $_REQUEST['search']);
 
-if($criteria == "name"){
-  $sql="SELECT A.dataset_Name, C.dataset_owner_name, C.dataset_owner_email, C.dataset_owner_phone,
-      B.dataset_steward_email, B.dataset_steward_phone, B.dataset_steward_name,D.kpi_name,D.strat_priority_ID
-   from dataset A 
-    inner join dataset_steward B on A.dataset_steward_ID = B.dataset_steward_ID
-    inner join dataset_owner C on A.dataset_owner_ID=C.dataset_owner_ID
-    inner join kpi D on A.dataset_ID=D.dataset_ID";
+
     if ($result = mysqli_query($conn, $sql)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
@@ -49,13 +43,7 @@ if($criteria == "name"){
     else{
       echo "No result";
     }
-}else if($criteria=="ownername"){
-      $sql="SELECT A.dataset_Name, C.dataset_owner_name, C.dataset_owner_email, C.dataset_owner_phone,
-        B.dataset_steward_email, B.dataset_steward_phone, B.dataset_steward_name,D.kpi_name,D.strat_priority_ID
-      from dataset A 
-        inner join dataset_steward B on A.dataset_steward_ID = B.dataset_steward_ID
-        inner join dataset_owner C on A.dataset_owner_ID=C.dataset_owner_ID
-        inner join kpi D on A.dataset_ID=D.dataset_ID";
+
 
       if ($result = mysqli_query($conn, $sql)) {
     /* fetch associative array */
@@ -81,13 +69,7 @@ if($criteria == "name"){
     else{
       echo "No result";
     }
-    }else if($criteria=="stewardname"){
-      $sql="SELECT A.dataset_Name, C.dataset_owner_name, C.dataset_owner_email, C.dataset_owner_phone,
-        B.dataset_steward_email, B.dataset_steward_phone, B.dataset_steward_name,D.kpi_name,D.strat_priority_ID
-      from dataset A 
-        inner join dataset_steward B on A.dataset_steward_ID = B.dataset_steward_ID
-        inner join dataset_owner C on A.dataset_owner_ID=C.dataset_owner_ID
-        inner join kpi D on A.dataset_ID=D.dataset_ID";
+   
 
       if ($result = mysqli_query($conn, $sql)) {
     /* fetch associative array */
@@ -113,13 +95,7 @@ if($criteria == "name"){
     else{
       echo "No result";
     }
-    }else if($criteria=="kpiname"){
-      $sql="SELECT A.dataset_Name, C.dataset_owner_name, C.dataset_owner_email, C.dataset_owner_phone,
-        B.dataset_steward_email, B.dataset_steward_phone, B.dataset_steward_name,D.kpi_name,D.strat_priority_ID
-      from dataset A 
-        inner join dataset_steward B on A.dataset_steward_ID = B.dataset_steward_ID
-        inner join dataset_owner C on A.dataset_owner_ID=C.dataset_owner_ID
-        inner join kpi D on A.dataset_ID=D.dataset_ID";
+   
 
       if ($result = mysqli_query($conn, $sql)) {
     /* fetch associative array */
@@ -144,13 +120,7 @@ if($criteria == "name"){
     else{
       echo "No result";
     }
-    }else if($criteria=="strategicpriority"){
-      $sql="SELECT A.dataset_Name, C.dataset_owner_name, C.dataset_owner_email, C.dataset_owner_phone,
-        B.dataset_steward_email, B.dataset_steward_phone, B.dataset_steward_name,D.kpi_name,D.strat_priority_ID
-      from dataset A 
-        inner join dataset_steward B on A.dataset_steward_ID = B.dataset_steward_ID
-        inner join dataset_owner C on A.dataset_owner_ID=C.dataset_owner_ID
-        inner join kpi D on A.dataset_ID=D.dataset_ID";
+   
 
       if ($result = mysqli_query($conn, $sql)) {
     /* fetch associative array */
