@@ -15,7 +15,7 @@ mysqli_select_db ( $conn , 'WSSC_Data_Catalog' );
 
 
 //pull form data
-$criteria = mysqli_real_escape_string($conn, $_REQUEST['criteria']);
+
 $searchvalue = mysqli_real_escape_string($conn, $_REQUEST['search']);
 
 if($criteria == "name"){
