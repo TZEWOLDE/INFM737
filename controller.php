@@ -146,7 +146,6 @@ $searchvalue = mysqli_real_escape_string($conn, $_REQUEST['search']);
     else{
       echo "No result";
     }
-    }
 // Close connection
 mysqli_close($conn);
 ?>

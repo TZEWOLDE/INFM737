@@ -74,9 +74,9 @@ CREATE TABLE IF NOT EXISTS dataset_owner (
 --
 
 INSERT INTO dataset_owner (dataset_owner_ID, dataset_owner_name, dataset_owner_email, dataset_owner_phone, dataset_steward_ID) VALUES
-(1, 'Brice John', 'bj@gmail.com', '+1022883277', 1),
-(2, 'Tron Meghan', 'tm@gmail.com', '+1928443884', 2),
-(3, 'Steve Nice', 'sn@gmail.com', '+172349828482', 3);
+(1, 'Nicole Horvath' 'nh@email.com', '+123-456-7890', 1),
+(2, 'Ayanna Castro', 'ac@email.com', '+123-000-0000', 2);,
+(3, 'Steve Nice', 'sn@email.com', '+172-349-8482', 3);
 
 -- --------------------------------------------------------
 
@@ -98,9 +98,9 @@ CREATE TABLE IF NOT EXISTS dataset_steward (
 --
 
 INSERT INTO dataset_steward (dataset_steward_ID, dataset_steward_name, dataset_owner_name, dataset_steward_email, dataset_steward_phone) VALUES
-(1, 'Steve Bruce', 'Brice John', 'sb@gmail.com', '+1927377466'),
-(2, 'Mike Posner', 'Tron Meghan', 'mk@gmail.com', '+18420004239'),
-(3, 'Garry Barry', 'Steve Nice', 'gb@gmail.com', '+1666568836');
+(1, 'Angela Ballard-Landers', 'abl@email.com', '+001-123-4567'),
+(2, 'Paula Schisler', 'ps@email.com', '+999-999-9999'),
+(3, 'Garry Barry', 'Steve Nice', 'gb@email.com', '+166-656-8836');
 
 -- --------------------------------------------------------
 
@@ -123,9 +123,9 @@ CREATE TABLE kpi (
 --
 
 INSERT INTO kpi (kpi_ID, kpi_name, kpi_owner_ID, kpi_description, dataset_ID, permission_status, strat_priority_ID) VALUES
-(2, 'First KPI', 1, 'This is the first KPI description', 2, 'active', 1),
-(3, 'Second KPI', 1, 'This is the second KPI description', 3, 'inactive', 2),
-(4, 'Third KPI', 1, 'This is the third KPI description', 4, 'active', 3);
+(1, 'Education Programs (Number)', 1, 'The number of education programs offered by WSSC on a yearly basis. Measuring the reach to local schools and the ability to reach students in the local service area.', 2, 'active', 1),
+(2, 'Education Programs (Attendance)', 1, 'The number of youth WSSC has engaged with on an annual basis. Measuring the impact of WSSC free programs for local students that promote understanding of water as a valuable natural resource.', 3, 'inactive', 1),
+(3, 'DEI Offerings', 1, 'The number of WSSC employees that have engaged with Diversity, Equity and Inclusion offered programs. Measruing the number of opportunities provided to employees in relation to the number of employees who attended.', 4, 'active', 5);
 
 -- --------------------------------------------------------
 
@@ -147,9 +147,8 @@ CREATE TABLE IF NOT EXISTS kpi_owner (
 --
 
 INSERT INTO kpi_owner (kpi_owner_ID, kpi_owner_name, kpi_owner_email, kpi_owner_phone) VALUES
-(1, 'John Stewart', 'jstwt@gmail.com', '+15646646664'),
-(2, 'Legend Bowie', 'lb@gmail.com', '+1628848884'),
-(3, 'Brown Kepper', 'bk@gmail.com', '+12939948885');
+(1, 'Nicole Horvath' 'nh@email.com', '+123-456-7890'),
+(2, 'Ayanna Castro', 'ac@email.com', '+123-000-0000');
 
 -- --------------------------------------------------------
 
@@ -224,9 +223,9 @@ CREATE TABLE IF NOT EXISTS data_user (
 --
 
 INSERT INTO data_user (user_ID, user_name, permission_ID, user_phone, user_email) VALUES
-(1, 'Jack Me', 1, '+1902837374', 'jm@gmail.com'),
-(2, 'Kim Sparrow', 2, '+165634884894', 'sp@gmail.com'),
-(3, 'Gary Swift', 3, '+14556887874', 'gs@gmail.com');
+(1, 'Jack Me', 1, '+190-283-7374', 'jm@email.com.com'),
+(2, 'Kim Sparrow', 2, '+165-634-4894', 'sp@email.com'),
+(3, 'Gary Swift', 3, '+145-688-7874', 'gs@email.com');
 
 --
 -- Indexes for dumped tables
