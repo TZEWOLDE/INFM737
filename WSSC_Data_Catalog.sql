@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS WSSC_Data_Catalog.data_user (
   data_user_email VARCHAR(45) NULL DEFAULT NULL,
   dataset_ID INT NOT NULL DEFAULT 0,
   data_user_ID INT NOT NULL AUTO_INCREMENT,
-  permission_ID VARCHAR(45) DEFAULT ('inactive'),
+  permission_ID INT DEFAULT (0),
   PRIMARY KEY (data_user_ID, dataset_ID),
   INDEX dataset_ID_idx (dataset_ID ASC) VISIBLE,
   CONSTRAINT con3_dataset_ID
@@ -202,19 +202,40 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 INSERT INTO dataset (dataset_ID, dataset_name, dataset_owner_ID, dataset_steward_ID) VALUES
-(2, 'Iris dataset', 1, 1),
-(3, 'Car dataset', 2, 2),
-(4, 'Faces dataset', 3, 3);
+(1, 'Water dataset', 1, 1),
+(2, 'Events dataset', 2, 2),
+(3, 'Commissions dataset', 3, 3),
+(4, 'Spending dataset', 4, 4),
+(5, 'Trucks dataset', 5, 5),
+(6, 'Pipes dataset', 6, 6),
+(7, 'Billing dataset', 7, 7),
+(8, 'Schools dataset', 8, 8),
+(9, 'Employees dataset', 9, 9)
+
+;
 
 INSERT INTO dataset_owner (dataset_id, dataset_owner_ID, dataset_owner_name, dataset_owner_email, dataset_owner_phone) VALUES
 (1, 1, 'Nicole Horvath', 'nh@email.com', '+123-456-7890'),
 (2, 2, 'Ayanna Castro', 'ac@email.com', '+123-000-0000'),
-(3, 3, 'Steve Nice', 'sn@email.com', '+172-349-8482');
+(3, 3, 'Steve Nice', 'sn@email.com', '+172-349-8482'),
+(4, 4, 'Jane Doe', 'jdoe@email.com', '+000-111-3333'),
+(5, 5, 'Akash Patel', 'ap@email.com', '+999-999-9999'),
+(6, 6, 'Emilia Fuentez', 'efuentez@email.com', '+333-333-2222'),
+(7, 7, 'Robert White', 'white@email.com', '+123-321-0000'),
+(8, 8, 'Jamie Smith', 'smithjamie@email.com', '+301-345-3219'),
+(9, 9, 'Frederick Mercury', 'fhg@email.com', '+202-401-2340')
+;
 
 INSERT INTO dataset_steward (dataset_steward_ID, dataset_steward_name, dataset_steward_email, dataset_steward_phone) VALUES
 (1, 'Angela Ballard-Landers', 'abl@email.com', '+001-123-4567'),
 (2, 'Paula Schisler', 'ps@email.com', '+999-999-9999'),
-(3, 'Garry Barry', 'gb@email.com', '+166-656-8836');
+(3, 'Garry Barry', 'gb@email.com', '+166-656-8836'),
+(4, 'Regan Rill', 'rr@email.com', '+301-431-8543'),
+(5, 'Juan Jimenez', 'jj@email.com', '+202-493-9471'),
+(6, 'Andre Inno', 'ainno@email.com', '+301-342-8504'),
+(7, 'Alfredo Bertolli', 'aber@email.com', '+202-348-9183'),
+(8, 'Benedicta Ross', 'bross@email.com', '+301-482-3803'),
+(9, 'Janet Jackson', 'jjacks@email.com', '301-691-0348');
 
 INSERT INTO kpi (kpi_ID, kpi_name, kpi_owner_ID, kpi_description, permission_status, strategic_priority_ID) VALUES
 (1, 'Education Programs (Number)', 1, 'The number of education programs offered by WSSC on a yearly basis. Measuring the reach to local schools and the ability to reach students in the local service area.', 'active', 1),
@@ -226,9 +247,10 @@ INSERT INTO kpi_owner (kpi_owner_ID, kpi_owner_name, kpi_owner_email, kpi_owner_
 (2, 'Ayanna Castro', 'ac@email.com', '+123-000-0000');
 
 INSERT INTO permissions (permission_ID, permission_status, dataset_ID, dataset_owner_ID, dataset_steward_ID, date_granted, date_expires) VALUES
-(1, 'active', 2, 1, 1, '2021-11-18', '2022-11-18'),
-(2, 'inactive', 3, 2, 2, '2021-11-18', '2022-11-18'),
-(3, 'pending', 4, 3, 3, '2021-11-18', '2022-11-18');
+(1, 'inactive', 2, 2, 1, '2019-11-18', '2020-11-18'),
+(2, 'active', 3, 3, 2, '2021-11-18', '2022-11-18'),
+(3, 'active', 7, 7, 7, '2021-12-11', '2022-12-11');
+
 
 INSERT INTO strategic_priority (strategic_priority_ID, strategic_priority_name) VALUES
 (1, 'Enhance Customer Experience'),
@@ -246,3 +268,4 @@ INSERT INTO data_user (data_user_ID, data_user_name, permission_ID, data_user_ph
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
